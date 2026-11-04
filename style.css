@@ -1,0 +1,820 @@
+/* ==========================================================================
+   1. RESET DE ESTILOS BÁSICOS & VARIÁVEIS (Identidade Selene Joias)
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --white: #FFFFFF;
+    --bg-pink-light: #FFF5F6; 
+    --pink-brand: #F2C1C6;     
+    --gold: #D4AF37;           
+    --gold-dark: #AA820A;      
+    --text-dark: #333333;      
+    --text-light: #666666;
+    --font-serif: 'Cormorant Garamond', serif;
+    --font-sans: 'Montserrat', sans-serif;
+}
+
+body {
+    font-family: var(--font-sans);
+    background-color: var(--white);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+/* ==========================================================================
+   2. COMPONENTES GLOBAIS (Cabeçalho, Faixa, Container)
+   ========================================================================== */
+.top-bar {
+    background-color: var(--bg-pink-light);
+    border-bottom: 1px solid var(--pink-brand);
+    text-align: center;
+    padding: 8px 10px;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    color: var(--text-dark);
+}
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 5%;
+    background-color: var(--white);
+    border-bottom: 1px solid #ECECEC;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo img {
+    height: 65px;            
+    width: auto;              
+    display: block;
+    object-fit: contain;
+}
+
+.logo h1 {
+    font-family: var(--font-serif);
+    font-size: 1.8rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    white-space: nowrap;
+    display: flex;
+    gap: 8px;
+}
+
+.logo span {
+    color: var(--gold);
+}
+
+.nav-menu ul {
+    display: flex;
+    list-style: none;
+}
+
+.nav-menu ul li {
+    margin: 0 15px;
+}
+
+.nav-menu ul li a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-size: 0.9rem;
+    font-weight: 400;
+    transition: color 0.3s;
+}
+
+.nav-menu ul li a:hover,
+.nav-menu ul li a.active-nav {
+    color: var(--gold);
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+}
+
+.icon-btn {
+    text-decoration: none;
+    font-size: 1.2rem;
+    margin-left: 20px;
+    color: var(--text-dark);
+    position: relative;
+}
+
+.cart-count {
+    background-color: var(--gold);
+    color: white;
+    font-size: 0.7rem;
+    padding: 2px 6px;
+    border-radius: 50%;
+    position: absolute;
+    top: -8px;
+    right: -10px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 40px auto 80px;
+    padding: 0 20px;
+}
+
+/* ==========================================================================
+   3. VITRINE DA INDEX & HERO (Layout Vitrine de Produtos)
+   ========================================================================== */
+.hero-section {
+    display: flex;
+    flex-direction: column;  
+    align-items: center;      
+    text-align: center;       
+    padding: 50px 20px;       
+    background-color: var(--white);
+    width: 100%;
+}
+
+.hero-banner-container {
+    width: 100%;
+    max-width: 450px;         
+    margin-bottom: 25px;      
+    display: flex;
+    justify-content: center;
+}
+
+.hero-banner-img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.hero-content {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.hero-content h2 {
+    font-family: var(--font-serif);
+    font-size: 2.5rem;
+    color: var(--text-dark);
+    margin-bottom: 15px;
+    line-height: 1.3;
+}
+
+.hero-content p {
+    color: var(--text-light);
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.product-card {
+    background-color: var(--white);
+    border: 1px solid #F7F7F7;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(242, 193, 198, 0.2); 
+}
+
+.product-image {
+    background-color: #FAFAFA;
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 1 / 1;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: var(--pink-brand);
+    color: var(--text-dark);
+    font-size: 0.75rem;
+    padding: 4px 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    z-index: 1;
+}
+
+.product-info {
+    padding: 20px;
+    text-align: center;
+}
+
+.product-info h3 {
+    font-size: 0.95rem;
+    font-weight: 400;
+    margin-bottom: 8px;
+    color: var(--text-dark);
+}
+
+.price {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--gold-dark);
+}
+
+/* ==========================================================================
+   4. PÁGINA DE DETALHES DO PRODUTO (produto.html)
+   ========================================================================== */
+.product-details-container {
+    max-width: 1200px;
+    margin: 30px auto 80px;
+    padding: 0 20px;
+}
+
+.breadcrumb {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    margin-bottom: 30px;
+    letter-spacing: 0.5px;
+}
+
+.breadcrumb a {
+    color: var(--text-dark);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.breadcrumb a:hover {
+    color: var(--gold);
+}
+
+.product-view-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    margin-bottom: 60px;
+}
+
+.main-image-wrapper {
+    background-color: #FAFAFA;
+    border: 1px solid #F5F5F5;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.product-main-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.thumbnails-grid {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.thumb-img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border: 2px solid #EFEFEF;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.thumb-img:hover, 
+.thumb-img.active-thumb {
+    border-color: var(--gold);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.info-column h1 {
+    font-family: var(--font-serif);
+    font-size: 2.2rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.rating-stars {
+    color: var(--gold);
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.rating-count {
+    color: var(--text-light);
+    font-size: 0.85rem;
+}
+
+.price-container {
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #EEE;
+}
+
+.price-container .old-price {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    text-decoration: line-through;
+    margin-right: 12px;
+}
+
+.price-container .current-price {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--gold-dark);
+}
+
+.product-description {
+    color: var(--text-light);
+    margin-bottom: 30px;
+}
+
+.options-selector {
+    margin-bottom: 30px;
+}
+
+.options-selector label {
+    display: block;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.options-selector select {
+    width: 100%;
+    max-width: 320px;
+    padding: 12px;
+    border: 1px solid #DDD;
+    background-color: var(--white);
+    font-family: var(--font-sans);
+    color: var(--text-dark);
+    outline: none;
+    cursor: pointer;
+}
+
+.btn-add-to-cart {
+    display: block;
+    width: 100%;
+    max-width: 320px;
+    background-color: var(--text-dark);
+    color: var(--white);
+    text-align: center;
+    text-decoration: none;
+    padding: 15px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+    transition: background-color 0.3s;
+}
+
+.btn-add-to-cart:hover {
+    background-color: var(--gold-dark);
+}
+
+/* Tabela de Especificações Zebrada */
+.specs-section h2 {
+    font-family: var(--font-serif);
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.specs-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+}
+
+.specs-table th, 
+.specs-table td {
+    padding: 14px 20px;
+    border-bottom: 1px solid #F0F0F0;
+    text-align: left;
+}
+
+.specs-table th {
+    font-weight: 600;
+    color: var(--text-dark);
+    width: 25%;
+}
+
+.specs-table td {
+    color: var(--text-light);
+}
+
+.specs-table tbody tr:nth-child(even) {
+    background-color: var(--bg-pink-light);
+}
+
+/* ==========================================
+   5. PÁGINA DO CARRINHO DE COMPRAS (carrinho.html)
+   ========================================== */
+.cart-container {
+    max-width: 1200px;
+    margin: 40px auto 80px;
+    padding: 0 20px;
+}
+
+.cart-container h2 {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    margin-bottom: 30px;
+    font-weight: 500;
+}
+
+.cart-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.cart-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.cart-table caption {
+    padding: 10px 0;
+    font-style: italic;
+    text-align: left;
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+.cart-table th {
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-light);
+    padding: 15px;
+    border-bottom: 2px solid var(--pink-brand);
+    font-weight: 500;
+}
+
+.cart-table td {
+    padding: 20px 15px;
+    border-bottom: 1px solid #ECECEC;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.cart-table th:first-child, 
+.cart-table td:first-child {
+    text-align: left;
+}
+
+.cart-product-cell {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.cart-product-cell img {
+    width: 64px;
+    height: 64px;
+    object-fit: cover;
+    background-color: #FAFAFA;
+    border: 1px solid #EAEAEE;
+}
+
+.cart-product-cell h4 {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text-dark);
+    margin-bottom: 4px;
+}
+
+.qty-input {
+width: 60px;
+padding: 8px;
+text-align: center;
+border: 1px solid #DDD;
+outline: none;
+}
+.btn-remove {
+background: none;
+border: none;
+cursor: pointer;
+font-size: 1.1rem;
+transition: transform 0.2s;
+}
+.btn-remove:hover {
+transform: scale(1.15);
+}
+.free-shipping-note {
+background-color: #E6F4EA;
+color: #137333;
+padding: 15px 20px;
+font-size: 0.9rem;
+border-radius: 2px;
+text-align: left !important;
+}
+/* Card Lateral do Pedido */
+.order-summary {
+background-color: var(--bg-pink-light);
+border: 1px solid var(--pink-brand);
+padding: 30px;
+border-radius: 4px;
+}
+.order-summary h3 {
+font-family: var(--font-serif);
+font-size: 1.4rem;
+margin-bottom: 20px;
+font-weight: 500;
+}
+.summary-row {
+display: flex;
+justify-content: space-between;
+margin-bottom: 15px;
+font-size: 0.95rem;
+}
+.free-badge {
+color: #137333;
+font-weight: 600;
+}
+.coupon-wrapper {
+display: flex;
+gap: 10px;
+margin: 20px 0;
+}
+.coupon-wrapper input {
+flex: 1;
+padding: 10px;
+border: 1px solid #DDD;
+outline: none;
+font-family: var(--font-sans);
+}
+.coupon-wrapper button {
+padding: 10px 15px;
+background-color: var(--text-dark);
+color: var(--white);
+border: none;
+cursor: pointer;
+font-size: 0.85rem;
+text-transform: uppercase;
+}
+.order-summary hr {
+border: 0;
+border-top: 1px solid var(--pink-brand);
+margin: 20px 0;
+}
+.total-row {
+font-size: 1.2rem;
+font-weight: 600;
+color: var(--text-dark);
+}
+.btn-checkout {
+display: block;
+text-align: center;
+background-color: var(--text-dark);
+color: var(--white);
+padding: 15px;
+text-decoration: none;
+text-transform: uppercase;
+letter-spacing: 1px;
+font-weight: 500;
+font-size: 0.9rem;
+margin-top: 20px;
+transition: background-color 0.3s;
+}
+.btn-checkout:hover {
+background-color: var(--gold-dark);
+}
+/* ==========================================================================
+6. FORMULÁRIO DE CADASTRO & CHECKOUT (cadastro.html)
+========================================================================= */
+.form-container {
+max-width: 800px;
+margin: 40px auto 80px;
+padding: 0 20px;
+}
+.form-container h2 {
+font-family: var(--font-serif);
+font-size: 2rem;
+margin-bottom: 30px;
+text-align: center;
+font-weight: 500;
+}
+.checkout-form fieldset {
+border: 1px solid #ECECEC;
+padding: 30px;
+margin-bottom: 30px;
+border-radius: 4px;
+background-color: var(--white);
+}
+.checkout-form legend {
+font-family: var(--font-serif);
+font-size: 1.3rem;
+font-weight: 500;
+color: var(--gold-dark);
+padding: 0 12px;
+}
+.form-group {
+display: flex;
+flex-direction: column;
+gap: 6px;
+margin-bottom: 20px;
+}
+.form-row {
+display: flex;
+gap: 20px;
+}
+.form-row .form-group {
+flex: 1;
+}
+.form-row .expand-2 { flex: 2; }
+.form-row .expand-3 { flex: 3; }
+.checkout-form label {
+font-size: 0.85rem;
+font-weight: 500;
+color: var(--text-dark);
+}
+.checkout-form input[type="text"],
+.checkout-form input[type="email"],
+.checkout-form input[type="tel"],
+.checkout-form input[type="password"],
+.checkout-form input[type="date"],
+.checkout-form select {
+padding: 12px;
+border: 1px solid #DDD;
+border-radius: 2px;
+font-family: var(--font-sans);
+font-size: 0.9rem;
+color: var(--text-dark);
+outline: none;
+width: 100%;
+transition: all 0.25s ease-in-out;
+}
+/* Pseudo-classes de Foco e Validação Estilizada Requeridas */
+.checkout-form input:focus,
+.checkout-form select:focus {
+border-color: var(--gold);
+box-shadow: 0 0 6px rgba(212, 175, 55, 0.3);
+}
+.checkout-form input:focus:valid,
+.checkout-form select:focus:valid {
+border-color: #28a745 !important;
+box-shadow: 0 0 6px rgba(40, 167, 69, 0.3) !important;
+}
+.checkout-form input:focus:invalid,
+.checkout-form select:focus:invalid {
+border-color: #dc3545 !important;
+box-shadow: 0 0 6px rgba(220, 53, 69, 0.3) !important;
+}
+.checkout-form input[type="file"] {
+padding-top: 5px;
+}
+.payment-instruction {
+font-size: 0.9rem;
+color: var(--text-light);
+margin-bottom: 20px;
+}
+/* Grade Customizada para as Formas de Pagamento */
+.payment-options-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+gap: 15px;
+}
+.payment-card-option {
+cursor: pointer;
+}
+.payment-card-option input {
+display: none;
+}
+.payment-content {
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 20px;
+border: 1px solid #DDD;
+border-radius: 4px;
+text-align: center;
+background-color: var(--white);
+transition: all 0.2s ease;
+}
+.payment-icon {
+font-size: 1.6rem;
+margin-bottom: 8px;
+}
+.payment-content strong {
+font-size: 0.9rem;
+color: var(--text-dark);
+margin-bottom: 4px;
+}
+.payment-content small {
+color: var(--text-light);
+font-size: 0.75rem;
+}
+.payment-card-option input:checked + .payment-content {
+border-color: var(--gold);
+background-color: var(--bg-pink-light);
+box-shadow: 0 4px 10px rgba(212, 175, 55, 0.15);
+}
+.terms-and-submit {
+margin-top: 10px;
+display: flex;
+flex-direction: column;
+gap: 20px;
+}
+.checkbox-label {
+display: flex;
+align-items: center;
+gap: 10px;
+cursor: pointer;
+font-size: 0.9rem;
+}
+.checkbox-label a {
+color: var(--gold-dark);
+text-decoration: none;
+}
+.btn-submit-order {
+width: 100%;
+padding: 16px;
+background-color: var(--text-dark);
+color: var(--white);
+border: none;
+font-family: var(--font-sans);
+font-size: 0.95rem;
+text-transform: uppercase;
+letter-spacing: 1px;
+font-weight: 500;
+cursor: pointer;
+transition: background-color 0.3s;
+}
+.btn-submit-order:hover {
+background-color: var(--gold-dark);
+}
+.sr-only {
+position: absolute;
+width: 1px;
+height: 1px;
+padding: 0;
+margin: -1px;
+overflow: hidden;
+clip: rect(0, 0, 0, 0);
+border: 0;
+}
+/* ==========================================================================
+7. RESPONSIVIDADE (Mantido & Adaptado para Grades Complexas)
+========================================================================== */
+@media (max-width: 992px) {
+.product-view-layout,
+.cart-layout {
+grid-template-columns: 1fr;
+gap: 40px;
+}
+}
+@media (max-width: 768px) {
+.main-header {
+flex-direction: column;
+gap: 15px;
+}
+.nav-menu ul {
+flex-wrap: wrap;
+justify-content: center;
+}
+.nav-menu ul li {
+margin: 5px 10px;
+}
+.hero-content h2 {
+font-size: 2rem;
+}
+.form-row {
+flex-direction: column;
+gap: 0;
+}
+.cart-table th:nth-child(2),
+.cart-table td:nth-child(2) {
+display: none;
+}
+}

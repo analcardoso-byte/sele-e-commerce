@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seu Carrinho | Selene Joias</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Cabeçalho Principal -->
+    <header class="main-header">
+        <div class="logo">
+            <h1>Selene <span>Joias</span></h1>
+        </div>
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="sobrenos.html">Sobre Nós</a></li>
+                <li><a href="cadastro.html">Cadastro</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="cart-container">
+        <h2>Seu Carrinho de Compras</h2>
+
+        <div class="cart-layout">
+            <!-- Tabela Semântica Completa de Itens -->
+            <section class="cart-items-section">
+                <table class="cart-table">
+                    <caption>Produtos adicionados ao seu pedido atual</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Produto</th>
+                            <th scope="col">Preço Unitário</th>
+                            <th scope="col">Quantidade</th>
+                            <th scope="col">Subtotal</th>
+                            <th scope="col">Ação</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="cart-product-cell">
+                                    <img src="collors2.png" alt="Colar Life Colors II">
+                                    <div>
+                                        <h4>Colar Life Colors II</h4>
+                                        <span>Colares</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>R$ 1.183,00</td>
+                            <td><input type="number" min="1" value="1" class="qty-input"></td>
+                            <td>R$ 1.183,00</td>
+                            <td><button class="btn-remove">🗑️</button></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="cart-product-cell">
+                                    <img src="brincospave.jpg" alt="Brincos Pave">
+                                    <div>
+                                        <h4>Brincos de Argola Pave</h4>
+                                        <span>Brincos</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>R$ 919,00</td>
+                            <td><input type="number" min="1" value="1" class="qty-input"></td>
+                            <td>R$ 919,00</td>
+                            <td><button class="btn-remove">🗑️</button></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="cart-product-cell">
+                                    <img src="anelpandora.jpg" alt="Anel Coração">
+                                    <div>
+                                        <h4>Anel Coração Vermelho</h4>
+                                        <span>Anéis</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>R$ 639,00</td>
+                            <td><input type="number" min="1" value="1" class="qty-input"></td>
+                            <td>R$ 639,00</td>
+                            <td><button class="btn-remove">🗑️</button></td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="5" class="free-shipping-note">
+                                🎉 Parabéns! Seu pedido qualificou-se para **Frete Grátis** para todo o Brasil.
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </section>
+
+            <!-- Resumo do Pedido -->
+            <aside class="order-summary">
+                <h3>Resumo do Pedido</h3>
+                <div class="summary-row">
+                    <span>Subtotal</span>
+                    <span>R$ 2.741,00</span>
+                </div>
+                <div class="summary-row">
+                    <span>Frete</span>
+                    <span class="free-badge">Grátis</span>
+                </div>
+                <div class="coupon-wrapper">
+                    <label for="coupon-code" class="sr-only">Cupom de Desconto</label>
+                    <input type="text" id="coupon-code" placeholder="Cupom de desconto">
+                    <button type="button">Aplicar</button>
+                </div>
+                <hr>
+                <div class="summary-row total-row">
+                    <span>Valor Total</span>
+                    <span>R$ 2.741,00</span>
+                </div>
+                <a href="cadastro.html" class="btn-checkout">Finalizar Compra</a>
+            </aside>
+        </div>
+    </main>
+
+</body>
+</html>

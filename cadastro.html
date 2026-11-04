@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro & Checkout | Selene Joias</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="logo">
+            <h1>Selene <span>Joias</span></h1>
+        </div>
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="carrinho.html">Voltar ao Carrinho</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="form-container">
+        <h2>Conclua seu Cadastro e Pedido</h2>
+        
+        <form action="#" method="POST" class="checkout-form">
+            
+            <!-- Dados Pessoais -->
+            <fieldset>
+                <legend>Dados Pessoais</legend>
+                
+                <div class="form-group">
+                    <label for="txt-nome">Nome Completo</label>
+                    <input type="text" id="txt-nome" name="nome" required placeholder="Digite seu nome completo">
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="txt-email">E-mail</label>
+                        <input type="email" id="txt-email" name="email" required placeholder="exemplo@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="txt-cpf">CPF</label>
+                        <input type="text" id="txt-cpf" name="cpf" required placeholder="000.000.000-00" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="txt-tel">Telefone / WhatsApp</label>
+                        <input type="tel" id="txt-tel" name="telefone" required placeholder="(11) 99999-9999">
+                    </div>
+                    <div class="form-group">
+                        <label for="txt-nascimento">Data de Nascimento</label>
+                        <input type="date" id="txt-nascimento" name="nascimento" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="txt-senha">Criar uma Senha de Acesso</label>
+                    <input type="password" id="txt-senha" name="senha" required minlength="6">
+                </div>
+
+                <div class="form-group">
+                    <label for="file-avatar">Foto de Perfil / Avatar (Opcional)</label>
+                    <input type="file" id="file-avatar" name="avatar" accept="image/*">
+                </div>
+            </fieldset>
+
+            <!-- Endereço de Entrega -->
+            <fieldset>
+                <legend>Endereço de Entrega</legend>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="txt-cep">CEP</label>
+                        <input type="text" id="txt-cep" name="cep" required placeholder="00000-000">
+                    </div>
+                    <div class="form-group expand-3">
+                        <label for="txt-rua">Rua / Logradouro</label>
+                        <input type="text" id="txt-rua" name="rua" required placeholder="Nome da rua ou avenida">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="txt-numero">Número</label>
+                        <input type="text" id="txt-numero" name="numero" required placeholder="123">
+                    </div>
+                    <div class="form-group expand-2">
+                        <label for="txt-comp">Complemento</label>
+                        <input type="text" id="txt-comp" name="complemento" placeholder="Apt, Bloco, etc.">
+                    </div>
+                    <div class="form-group expand-2">
+                        <label for="txt-bairro">Bairro</label>
+                        <input type="text" id="txt-bairro" name="bairro" required placeholder="Seu bairro">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group expand-3">
+                        <label for="txt-cidade">Cidade</label>
+                        <input type="text" id="txt-cidade" name="cidade" required placeholder="Sua cidade">
+                    </div>
+                    <div class="form-group">
+                        <label for="select-estado">Estado</label>
+                        <select id="select-estado" name="estado" required>
+                            <option value="">Selecione...</option>
+                            <option value="SP">São Paulo</option>
+                            <option value="RJ">Rio de Janeiro</option>
+                            <option value="MG">Minas Gerais</option>
+                            <option value="PR">Paraná</option>
+                        </select>
+                    </div>
+                </div>
+            </fieldset>
+
+            <!--Forma de Pagamento -->
+            <fieldset>
+                <legend>Forma de Pagamento</legend>
+                <p class="payment-instruction">Selecione o método de pagamento preferido:</p>
+                
+                <div class="payment-options-grid">
+                    <label class="payment-card-option">
+                        <input type="radio" name="pagamento" value="pix" required>
+                        <span class="payment-content">
+                            <span class="payment-icon">📱</span>
+                            <strong>PIX</strong>
+                            <small>Aprovação imediata</small>
+                        </span>
+                    </label>
+
+                    <label class="payment-card-option">
+                        <input type="radio" name="pagamento" value="cartao">
+                        <span class="payment-content">
+                            <span class="payment-icon">💳</span>
+                            <strong>Cartão de Crédito</strong>
+                            <small>Até 10x sem juros</small>
+                        </span>
+                    </label>
+
+                    <label class="payment-card-option">
+                        <input type="radio" name="pagamento" value="boleto">
+                        <span class="payment-content">
+                            <span class="payment-icon">📄</span>
+                            <strong>Boleto Bancário</strong>
+                            <small>1 a 2 dias úteis</small>
+                        </span>
+                    </label>
+                </div>
+            </fieldset>
+
+            <!-- Termos e Envio -->
+            <div class="terms-and-submit">
+                <label for="chk-termos" class="checkbox-label">
+                    <input type="checkbox" id="chk-termos" name="termos" required>
+                    <span>Aceito e concordo com os <a href="#">Termos de Uso</a> da plataforma.</span>
+                </label>
+
+                <button type="submit" class="btn-submit-order">Concluir Cadastro e Pagar</button>
+            </div>
+
+        </form>
+    </main>
+
+</body>
+</html>
